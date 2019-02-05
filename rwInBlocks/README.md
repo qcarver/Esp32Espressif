@@ -1,5 +1,9 @@
-# Quinns First ESP32 program 
+# Read and Write to SD card in Blocks 
 
-this program started by copying the examples/get-started/hello program and then modding it
+this program uses the sdmmc api to open, write to, read from and close an SD
+card using commands that treat it like memory, not disk. It's fast and
+deterministic.
 
-the objective here is to build an app which can use the ICS-43434 I2S microphone
+Note: blocks written to the disk may overwrite the VFS and therefore make the
+disk unreadable on a PC. B/c this is a block write w/o a file table blocks
+written cannot be read on a PC other than by a disk imaging program.
